@@ -1,0 +1,11 @@
+<h3>repositorios </h3>
+<h1>{{(_ArtService.repoObserver | async)?.length }}</h1>
+<div>
+  <p style="font-weight: bold; font-size: 1.3em;">{{_ArtService.MainRepo?.name}}</p>
+</div>
+
+<ul [@stragershowUp]="_ArtService.articulosCount">
+  <li *ngFor="let repo of _ArtService.repoObserver | async">{{repo.name}}</li>
+</ul>
+
+    

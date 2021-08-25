@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CursoAngular';
+  public tittle: boolean = false;
+
+  subscribed(eve:any){
+    console.log("Ya esta comunicanco el emitterEver");
+    console.log(eve);
+    //this.tittle = eve;
+  }
+  
 }

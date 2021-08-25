@@ -1,0 +1,32 @@
+:host {
+    display: block;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px, 4px, 4px rgba(0, 0,0, 2);
+    padding: 1em;
+    width: 400px;
+    max-height: 500px;
+    overflow: scroll;
+    margin: 1em;
+   
+}
+
+ul{
+    overflow: hidden;
+}
+
+.show{
+    animation: 0.4s ease-out 0s showup;
+}
+
+@keyframes showup {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}

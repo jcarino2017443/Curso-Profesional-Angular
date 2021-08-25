@@ -1,0 +1,31 @@
+    <h1>Curso Angular</h1>
+    <p *ngIf="!button; else available">Lazamineto: {{laucnDate | date:"dd-MMM-y h:mm:ss" :"+0100"}}</p>
+        <ng-template #available>
+            <span  class="a">Curso disponible</span>
+        </ng-template>
+        <div class="categoria" [ngSwitch]="cursos">
+            <span *ngSwitchCase="'Web'">Curso Web</span>
+            <span *ngSwitchCase="'Movil'">Curso Movil</span>
+            <span *ngSwitchCase="'Windows'">Curso CPU</span>
+            <span *ngSwitchDefault>Sin resultados</span>
+        </div>
+        
+        <h3>Tutor: {{nombre}}</h3>
+        <div [@showUp]="icono" style="overflow: hidden;">
+            <a (click)="evento()"> Para mas informacion <i class="fa" [ngClass]="{'fa-chevron-circle-down' : !icono, 'fa-chevron-circle-up': icono}"></i></a>
+            <p class="parrafo"> <span style="display: block; font-weight: bold;">{{seconds | SecondsToTimeFormat}}</span> Este curso es muy bueno, te lo recominedo por que cubre bastenates temas de angular</p>
+        </div>
+        <ul>
+            <li *ngFor="let topic of topics; index as posicion">{{posicion+1}} - {{topic}}</li>
+        </ul>
+        
+        <div>
+            <button type="button" name="button" [ngClass]="{active: button && tittle}" [disabled]="!button || !tittle">Precion del curso: {{precio | currency:'GTQ' }}</button>
+        </div>
+
+         <ng-content></ng-content>
+            
+    <!-- <a>Mas informacin <i class="fa" [ngClass]="{'fa-chevron-circle-down': !icono, 'fa-chevron-circle-up': icono}"></i></a>
+                <p *ngIf="icono" >Este es un curso muy bueno eh, te lo recomiendo pero antes deberias estar
+                    durmiendo o yo que se.
+                </p>  -->

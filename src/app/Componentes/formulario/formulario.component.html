@@ -1,0 +1,9 @@
+<div class="container">
+    <img class="imagen" [src]="imagen" alt="imagen usuario">
+    <p class="nombre">{{nombre}}</p>
+    <p class="username">{{username}}</p>
+     <input class="usuario" type="text" (change)="usuario($event)" value="{{username}}">
+     <input class="name" type="text" [(ngModel)]="nombre">
+
+
+</div>
